@@ -1,8 +1,9 @@
-function changeMessage() {
-    document.getElementById("hello").innerHTML = "You clicked the button!<br><button onclick='changeBack()'>Go Back</button>";
-  }
-  
-  function changeBack() {
-    document.getElementById("hello").innerHTML = "Hello, World!<br><button onclick='changeMessage()'>Click Me</button>";
-  }
-  
+// Smooth scrolling for internal links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth'
+    });
+  });
+});
